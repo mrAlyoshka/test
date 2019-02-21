@@ -1,0 +1,25 @@
+bash -x zadanie.sh
++ USER=zefiris
++ read line
++ IFS=,
++ set -- 192.168.1.35 10.10.11.10 10.10.11.11 10.10.11.12 10.10.11.13 10.10.11.14 10.10.11.15
++ LIST=192.168.1.35,10.10.11.10,10.10.11.11,10.10.11.12,10.10.11.13,10.10.11.14,10.10.11.15
++ read line
++ KEYFILE='~/.ssh/id_rsa'
++ ssh-add '~/.ssh/id_rsa'
+~/.ssh/id_rsa: No such file or directory
++ for TESTIP in $LIST
++ HOST=192.168.1.35
++ ssh zefiris@192.168.1.35 -T
++ ssh zefiris@192.168.1.35 cat /tmp/tmp.txt
++ rev
++ tr '\n' /
++ cut -c 2-
++ rev
++ cut '-d ' -f1,4
++ tr -s ' ' ' '
++ ssh zefiris@192.168.1.35 df -h
++ grep '/dev/[sd|md]'
++ for TESTIP in $LIST
++ HOST=10.10.11.10
++ ssh zefiris@10.10.11.10 -T
